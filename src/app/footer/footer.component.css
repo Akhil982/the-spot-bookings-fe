@@ -1,0 +1,16 @@
+ul{
+    list-style: none;
+    padding-left: 0;
+
+}
+ul li{
+    margin-bottom: 20px;
+}
+.social-icons{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;    
+}
+.social-icons li{
+    cursor: pointer;
+}
