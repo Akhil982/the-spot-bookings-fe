@@ -1,0 +1,17 @@
+.ratingblock{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 0;
+}
+.ratingblock svg{
+    height: 18px;
+    width: 18px;
+}
+.share-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px;
+    gap: 10px;
+}
