@@ -1,0 +1,44 @@
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+.card{
+    cursor: pointer;
+    transition: transform .2s; 
+}
+.card:hover{
+    transform: scale(1.02);
+}
+.games-icns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.games-icns svg{
+    width: 24px;
+    height: 24px;
+}
+@media screen and (max-width : 1024px) {
+    .cards{       
+        grid-template-columns: repeat(2,1fr);       
+    }
+}
+@media screen and (max-width : 768px) {
+    .cards{       
+        grid-template-columns: repeat(1,1fr);       
+    }
+}
+.ratingblock{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.ratingblock svg{
+    height: 18px;
+    width: 18px;
+}
+.search-block{
+    display: flex;
+    align-items: center;
+}
