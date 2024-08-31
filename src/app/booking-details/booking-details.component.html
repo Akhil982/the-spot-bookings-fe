@@ -6,10 +6,10 @@
             <li class="breadcrumb-item active" aria-current="page">Data</li>
         </ol>
     </nav>
-    <h5>Battlefield Kandivali</h5>
+    <h5>{{branch.name}}</h5>
     <div class="row">
         <div class="col-8 d-flex align-items-center">
-            <span>Kandivali West
+            <span>{{branch.area}}
             </span>
             <p class="ratingblock ">
                 <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,16 +38,16 @@
                 </ol>
                 <div class="carousel-inner rounded">
                   <div class="carousel-item active">
-                    <p class="display-1 position-absolute ">1</p>
-                    <img class="d-block w-100" src="../../assets/sample.jfif" alt="First slide">
+                    <!-- <p class="display-1 position-absolute ">1</p> -->
+                    <img class="d-block w-100"  [src]="'../../assets/' + branch.area + '/THE SPOT ' + branch.area + ' 1.jpeg'" alt="First slide">
                   </div>
                   <div class="carousel-item">
-                    <p class="display-1 position-absolute ">2</p>
-                    <img class="d-block w-100" src="../../assets/sample.jfif" alt="Second slide">
+                    <!-- <p class="display-1 position-absolute ">2</p> -->
+                    <img class="d-block w-100"  [src]="'../../assets/' + branch.area + '/THE SPOT ' + branch.area + ' 1.jpeg'" alt="Second slide">
                   </div>
                   <div class="carousel-item">
-                    <p class="display-1 position-absolute ">3</p>
-                    <img class="d-block w-100" src="../../assets/sample.jfif" alt="Third slide">
+                    <!-- <p class="display-1 position-absolute ">3</p> -->
+                    <img class="d-block w-100"  [src]="'../../assets/' + branch.area + '/THE SPOT ' + branch.area + ' 1.jpeg'" alt="Third slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

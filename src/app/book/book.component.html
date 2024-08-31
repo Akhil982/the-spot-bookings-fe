@@ -1,6 +1,6 @@
 <section>
     <div class="search-block">
-        <h4>Discover and Book Top Sports Complexes in Navi Mumbai</h4>
+        <h4>Discover new era of Sports collaborating with THE SPOT</h4>
     </div>
     <hr>
     <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
@@ -9,12 +9,12 @@
                 Branches (1)
             </ng-template>
             <div class="cards container py-5">
-                <div class="card" *ngFor="let i of [1,2,3,4,5,6,7]" routerLink="/bookingdetails">
-                    <img class="card-img-top" src="../../assets/sample.jfif" alt="Card image cap">
+                <div class="card" *ngFor="let branch of branches" (click)="expandBranch(branch.id)">
+                    <img class="card-img-top" [src]="'../../assets/' + branch.area + '/THE SPOT ' + branch.area + ' 1.jpeg'" alt="Card image cap">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                            <h6 class="card-title">Card title {{i}}</h6>
-                            <p class="ratingblock ">
+                            <h6 class="card-title">{{branch.name}}</h6>
+                            <p class="ratingblock">
                                 <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -23,10 +23,10 @@
                                             d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
                                             fill="#FFCB45"></path>
                                     </g>
-                                </svg>5.00(1)
+                                </svg>{{branch.rating}}.00(1)
                             </p>
                         </div>
-                        <p class="card-text">Some quick example text to build</p>
+                        <p class="card-text">{{branch.area}}</p>
                         <div class="games-icns">
                             <svg fill="#000000" height="200px" width="200px" version="1.1" id="Layer_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
