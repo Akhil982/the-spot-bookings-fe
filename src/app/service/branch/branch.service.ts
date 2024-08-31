@@ -8,6 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class BranchService {
 
   public expandedBranchId: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  //baseUrl = 'https://the-spot-bookings-be.onrender.com';
+  baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +19,7 @@ export class BranchService {
     //   'Authorization': `Bearer ${token}`
     // });
     //return this.http.get<any>('http://localhost:8080/the-spot/branch/get-branches', { headers });
-    return this.http.get<any>('https://the-spot-bookings-be.onrender.com/the-spot/branch/get-branches');
+    return this.http.get<any>(this.baseUrl + '/the-spot/branch/get-branches');
   }
 
   getSpotBranchById(id: string): Observable<any> {
@@ -26,7 +28,7 @@ export class BranchService {
     //   'Authorization': `Bearer ${token}`
     // });
     // /return this.http.get<any>('http://localhost:8080/the-spot/branch/get-branch/'+id, { headers });
-    return this.http.get<any>('https://the-spot-bookings-be.onrender.com/the-spot/branch/get-branch/'+id);
+    return this.http.get<any>(this.baseUrl + '/the-spot/branch/get-branch/'+id);
   }
 
 }

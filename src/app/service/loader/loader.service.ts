@@ -20,6 +20,7 @@ export class LoaderService {
   }
 
   load500ms(){
+    this.loadingSubject.next(true);
     setTimeout(() => {
       this.loadingSubject.next(false);
     }, 500);

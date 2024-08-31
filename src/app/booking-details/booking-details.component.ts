@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BranchService } from '../service/branch/branch.service';
 import { LoaderService } from '../service/loader/loader.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-booking-details',
@@ -9,12 +10,23 @@ import { LoaderService } from '../service/loader/loader.service';
 })
 export class BookingDetailsComponent {
 
-  constructor(private branchService: BranchService, private loaderService: LoaderService){}
+  constructor(private branchService: BranchService, private loaderService: LoaderService, private route: ActivatedRoute){}
 
   branch: any;
 
   ngOnInit(){
-    this.expandedBranchIdSubscription();
+    //this.expandedBranchIdSubscription();
+    this.paramsSubscription();
+  }
+
+  paramsSubscription(){
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.loaderService.show();
+        this.getSpotBranchById(id);
+      }
+    });
   }
 
   expandedBranchIdSubscription(){
@@ -24,9 +36,10 @@ export class BookingDetailsComponent {
   }
 
   getSpotBranchById(id: string){
-    this.loaderService.load500ms();
+    this.loaderService.show();
     this.branchService.getSpotBranchById(id).subscribe(response => {
       this.branch = response.data;
+      this.loaderService.hide();
     });
   }
 

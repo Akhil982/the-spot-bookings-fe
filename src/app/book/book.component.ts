@@ -30,7 +30,7 @@ export class BookComponent {
 
   expandBranch(id: string){
     this.branchService.expandedBranchId.next(id);
-    this.router.navigate(['/bookingDetails']);
+    this.router.navigate(['/spot-details', id]);
   }
 
 }
