@@ -1,15 +1,15 @@
 <section class="px-5">
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb bg-transparent">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">SPOT</a></li>
+            <li class="breadcrumb-item"><a href="#">{{branch?.area}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data</li>
         </ol>
     </nav>
-    <h5>Battlefield Kandivali</h5>
+    <h5>{{branch?.name}}</h5>
     <div class="row">
-        <div class="col-lg-8 col-md-6 col-sm-12 d-flex align-items-center">
-            <span>Kandivali West
+        <div class="col-8 d-flex align-items-center">
+            <span>{{branch?.area}}
             </span>
             <p class="ratingblock ">
                 <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +20,7 @@
                             d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
                             fill="#FFCB45"></path>
                     </g>
-                </svg>5.00(1 Rating)
+                </svg>{{branch.rating}}.00(1 Rating)
             </p>
             <a href="" class="ml-2">Rate Venue</a>
         </div>
@@ -37,18 +37,18 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner rounded">
-                    <div class="carousel-item active">
-                        <p class="display-1 position-absolute ">1</p>
-                        <img class="d-block w-100" src="../../assets/sample.jfif" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <p class="display-1 position-absolute ">2</p>
-                        <img class="d-block w-100" src="../../assets/sample.jfif" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <p class="display-1 position-absolute ">3</p>
-                        <img class="d-block w-100" src="../../assets/sample.jfif" alt="Third slide">
-                    </div>
+                  <div class="carousel-item active">
+                    <!-- <p class="display-1 position-absolute ">1</p> -->
+                    <img class="d-block w-100"  [src]="'../../assets/' + branch?.area + '/THE SPOT ' + branch?.area + ' 1.jpeg'" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <!-- <p class="display-1 position-absolute ">2</p> -->
+                    <img class="d-block w-100"  [src]="'../../assets/' + branch?.area + '/THE SPOT ' + branch?.area + ' 1.jpeg'" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <!-- <p class="display-1 position-absolute ">3</p> -->
+                    <img class="d-block w-100"  [src]="'../../assets/' + branch?.area + '/THE SPOT ' + branch?.area + ' 1.jpeg'" alt="Third slide">
+                  </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -113,20 +113,23 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <p class="font-weight-bold">Timing</p>
-                    <p>24 hrs</p>
+                    <p class="font-weight-bold">Timings</p>
+                    <p>{{branch.branchDetails.timing}}</p>
                 </div>
             </div>
             <div class="card mt-3">
                 <div class="card-body">
                     <p class="font-weight-bold">Location</p>
-                    <p>G984+89G, BK Enclave, Miyapur, Hyderabad, Telangana 500049</p>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12028.835909993624!2d78.3559191!3d17.5152585!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d0042b79a83%3A0x84565519df6b4ae1!2sTHE%20SPOT!5e1!3m2!1sen!2sin!4v1724829878386!5m2!1sen!2sin"
-                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p>{{branch.branchDetails.location}}</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12028.835909993624!2d78.3559191!3d17.5152585!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d0042b79a83%3A0x84565519df6b4ae1!2sTHE%20SPOT!5e1!3m2!1sen!2sin!4v1724829878386!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </div>
-</section>
+    <div class="w-full p-5 border border_radius border-border_color">
+      <div class="font-semibold text-md">About Venue</div>
+      <h3 class="flex items-center justify-start mt-5 text-sm md:text-md line-clamp-7">
+        {{branch?.branchDetails?.about}}
+        <br><br>
+      </h3>
+ </section>
