@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { BranchService } from '../service/branch/branch.service';
 import { LoaderService } from '../service/loader/loader.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { AuthService } from '../service/authentication/auth.service';
 
 @Component({
   selector: 'app-booking-details',
@@ -10,13 +11,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookingDetailsComponent {
 
-  constructor(private branchService: BranchService, private loaderService: LoaderService, private route: ActivatedRoute){}
+  constructor(private branchService: BranchService, private loaderService: LoaderService, private route: ActivatedRoute, private authService: AuthService, private router: Router){}
 
   branch: any;
+  isUserLoggedIn: boolean = false;
 
   ngOnInit(){
     //this.expandedBranchIdSubscription();
     this.paramsSubscription();
+    this.loggedInSubscription();
+  }
+
+  loggedInSubscription(){
+    this.authService.isUserLoggedIn.subscribe(data => {
+      this.isUserLoggedIn = data;
+    });
   }
 
   paramsSubscription(){
@@ -41,6 +50,12 @@ export class BookingDetailsComponent {
       this.branch = response.data;
       this.loaderService.hide();
     });
+  }
+
+  bookNow(){
+    if(!this.isUserLoggedIn){
+      this.router.navigate(['/login']);
+    }
   }
 
 

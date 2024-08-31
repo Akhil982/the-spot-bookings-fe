@@ -8,8 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class BranchService {
 
   public expandedBranchId: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  baseUrl = 'https://the-spot-bookings-be.onrender.com';
-  //baseUrl = 'http://localhost:8080';
+  //baseUrl = 'https://the-spot-bookings-be.onrender.com';
+  baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 

@@ -33,8 +33,11 @@
       <li class="nav-item">
         <a class="nav-link " href="#">Learn</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="#">Login/Signup</a>
+      <li class="nav-item" *ngIf="!isUserLoggedIn">
+        <a class="nav-link" (click)="loginPage()">Login/Signup</a>
+      </li>
+      <li class="nav-item" *ngIf="isUserLoggedIn">
+        <a class="nav-link">{{getFullName()}}</a>
       </li>
     </ul>
   </div>
