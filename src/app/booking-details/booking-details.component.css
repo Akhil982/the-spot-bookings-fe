@@ -1,17 +1,36 @@
-.ratingblock{
+.ratingblock {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 0;
 }
-.ratingblock svg{
+
+.ratingblock svg {
     height: 18px;
     width: 18px;
 }
-.share-btns{
+
+.share-btns {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 8px;
+    gap: 10px;
+}
+
+.sports-card {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.sports-card svg {
+    height: 40px;
+    width: 40px;
+}
+
+.cards-all {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
