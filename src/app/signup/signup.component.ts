@@ -18,6 +18,8 @@ export class SignupComponent {
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
+      firstName: new FormControl('', [Validators.required, Validators.email]),
+      lastName: new FormControl('', [Validators.required, Validators.email]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     });
@@ -25,11 +27,7 @@ export class SignupComponent {
 
   onSubmit(): void {
     let signUpData = this.signUpForm.value;
-    if (this.signUpForm.valid) {
-      signUpData['firstName'] = 'Akhil';
-      signUpData['lastName'] = 'Maldoddy';
-      signUpData['role'] = 'SUPER_ADMIN';
-    }
+    signUpData['role'] = 'SUPER_ADMIN';
     this.signUpSpotUser(signUpData);
   }
 
@@ -43,7 +41,6 @@ export class SignupComponent {
   signUpClicked(): void {
     console.log('Sign Up button clicked');
   }
-
 
 
 }

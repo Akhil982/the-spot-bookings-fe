@@ -54,7 +54,7 @@ export class BookingDetailsComponent {
 
   bookNow(){
     if(!this.isUserLoggedIn){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login', this.branchService.expandedBranchId.value]);
     }
   }
 

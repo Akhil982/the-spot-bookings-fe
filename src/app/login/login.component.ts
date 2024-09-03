@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../service/authentication/auth.service';
 import { LoaderService } from '../service/loader/loader.service';
 import { Router } from '@angular/router';
+import { BranchService } from '../service/branch/branch.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
 
   signInForm!: FormGroup;
 
-  constructor(private loaderService: LoaderService, private authService: AuthService, private router: Router){
+  constructor(private loaderService: LoaderService, private authService: AuthService, private router: Router, private branchService: BranchService){
 
   }
 
@@ -39,7 +40,11 @@ export class LoginComponent {
         localStorage.setItem('lastName', response.data.lastName);
         this.loaderService.hide();
         this.authService.isUserLoggedIn.next(true);
-        this.router.navigate(['/booking'])
+        if(this.authService.isUserLoggedIn){
+          this.router.navigate(['/spot-details', this.branchService.expandedBranchId.value]);
+        } else{
+          this.router.navigate(['/booking']);
+        }
       }
     });
   }
