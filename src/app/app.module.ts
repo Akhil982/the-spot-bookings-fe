@@ -15,6 +15,7 @@ import { SignupComponent } from './signup/signup.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
+import { BookingCartComponent } from './booking-cart/booking-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { LoaderComponent } from './loader/loader.component';
     BookingDetailsComponent,
     LoginComponent,
     SignupComponent,
-    LoaderComponent
+    LoaderComponent,
+    BookingCartComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { BranchService } from '../service/branch/branch.service';
 import { LoaderService } from '../service/loader/loader.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AuthService } from '../service/authentication/auth.service';
+import { CartService } from '../service/cart/cart.service';
 
 @Component({
   selector: 'app-booking-details',
@@ -11,7 +12,14 @@ import { AuthService } from '../service/authentication/auth.service';
 })
 export class BookingDetailsComponent {
 
-  constructor(private branchService: BranchService, private loaderService: LoaderService, private route: ActivatedRoute, private authService: AuthService, private router: Router){}
+  constructor(
+    private branchService: BranchService,
+    private loaderService: LoaderService,
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private router: Router,
+    private cartService: CartService
+  ){}
 
   branch: any;
   isUserLoggedIn: boolean = false;
@@ -55,6 +63,10 @@ export class BookingDetailsComponent {
   bookNow(){
     if(!this.isUserLoggedIn){
       this.router.navigate(['/login', this.branchService.expandedBranchId.value]);
+    }
+    else{
+      this.cartService.setBranchData(this.branch)
+      this.router.navigate(['/cart']);
     }
   }
 
