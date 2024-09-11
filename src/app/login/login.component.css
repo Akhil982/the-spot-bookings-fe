@@ -168,24 +168,24 @@ label{
     }
 
     &.btn-primary {
-        background: #bf7a34 !important;
-        border: 1px solid #bf7a34 !important;
+        background: #1A8917 !important;
+        border: 1px solid #1A8917 !important;
         color: white !important;
 
         &:hover {
-            border: 1px solid #bf7a34;
+            border: 1px solid #1A8917;
             background: transparent;
             color: #fff;
         }
 
         &.btn-outline-primary {
-            border: 1px solid #bf7a34;
+            border: 1px solid #1A8917;
             background: transparent;
             color: #fff;
 
             &:hover {
                 border: 1px solid transparent;
-                background: #bf7a34;
+                background: #1A8917;
                 color: white;
             }
         }

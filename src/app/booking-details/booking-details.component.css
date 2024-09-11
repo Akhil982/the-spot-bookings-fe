@@ -28,12 +28,12 @@
     width: 40px;
 }
 button.btn.btn-success.w-100 {
-    background: #bf7a34;
+    background: #1A8917;
 }
 .btn-outline-success:hover {
     color: #fff;
-    background-color: #bf7a34 !important;
-    border-color: #bf7a34 !important;
+    background-color: #1A8917 !important;
+    border-color: #1A8917 !important;
 }
 .cards-all {
     display: flex;

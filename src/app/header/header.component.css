@@ -23,7 +23,7 @@
     cursor: pointer;
   }
   a.nav-link.signup {
-    background: #bf7a34;
+    background: #1A8917;
     color: #fff;
     border-radius: 20px;
     padding: 6px 16px;
@@ -35,7 +35,7 @@ a.nav-link.login {
   padding: 6px 16px;
 }
 a.nav-link.logout {
-  background: #bf7a34;
+  background: #1A8917;
   color: #fff;
   border-radius: 20px;
   padding: 6px 16px;
