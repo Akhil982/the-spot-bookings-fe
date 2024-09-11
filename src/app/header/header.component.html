@@ -42,7 +42,10 @@
         <a class="nav-link login" (click)="loginPage()">Login</a>
       </li>
       <li class="nav-item" *ngIf="isUserLoggedIn">
-        <a class="nav-link">{{getFullName()}}</a>
+        <a class="nav-link username">{{getFullName()}}</a>
+      </li>
+      <li class="nav-item" *ngIf="isUserLoggedIn" matTooltip="logout">
+        <a class="nav-link logout"><img src="../../assets/logout-icon.svg" alt="logout"></a>
       </li>
     </ul>
   </div>

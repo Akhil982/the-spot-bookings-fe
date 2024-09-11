@@ -109,11 +109,11 @@
 }
 .search-block h4{
     margin-bottom: 0;
-    width: 50%;
     text-overflow: ellipsis;
     overflow: hidden;
     text-wrap: nowrap;
-    font-size: 26px;
+    font-size: 24px;
+    font-weight: 500;
 }
 hr {
   margin: 0px;
@@ -136,4 +136,10 @@ p.card-text {
 }
 .bg-clr{
   background-color: #f7f3f3;
+  min-height: calc(100vh - 426px);
+  overflow: auto;
+  max-height: 100%;
+}
+::ng-deep.mat-mdc-tab .mdc-tab-indicator__content--underline {
+  border-color: #1a8917 !important;
 }

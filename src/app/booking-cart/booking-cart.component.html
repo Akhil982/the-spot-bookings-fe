@@ -8,13 +8,16 @@
 
     <form>
       <div class="form-group">
-        <label for="sports">Sports</label>
+        <label for="sports">Sports</label>        
         <div class="select-wrapper">
-          <select id="sports">
+          <select class="form-control" id="sports">
+            <option>Badminton <img src="../../assets/badmintan.png" alt="cricket Icon" /></option>
+          <option>Box Cricket <img src="../../assets/cricket.png" alt="cricket Icon" /></option>
             <option *ngFor="let sport of branch.branchDetails.sports">{{sport}}</option>
             <!-- Add more options as needed -->
           </select>
-          <img src="assets/badminton-icon.svg" alt="Badminton Icon" />
+          <img src="../../assets/select-icon.svg" alt="select Icon" />
+          <!-- <img src="../../assets/cricket.png" alt="cricket Icon" /> -->
         </div>
       </div>
 
@@ -32,17 +35,21 @@
         <label>Duration</label>
         <div class="duration-control">
           <button type="button" class="duration-btn">-</button>
-          <span>1 Hr</span>
+          <span class="hours-input">1 Hr</span>
           <button type="button" class="duration-btn">+</button>
         </div>
       </div>
 
       <div class="form-group">
         <label for="court">Court</label>
-        <select id="court" class="form-control">
-          <option>--Select Court--</option>
-          <option>Court 1</option>
-        </select>
+        <div class="select-wrapper">
+          <select id="court" class="form-control">
+            <option>--Select Court--</option>
+            <option>Court 1</option>
+          </select>
+          <img src="../../assets/select-icon.svg" alt="select Icon" />
+          <!-- <img src="../../assets/cricket.png" alt="cricket Icon" /> -->
+        </div>
       </div>
 
       <button type="button" class="add-to-cart-btn" disabled>Add To Cart</button>
@@ -81,7 +88,7 @@
   <ng-template #emptyCart>
     <div class="cart-details">
       <div class="cart-icon">
-        <img src="assets/cart-icon.svg" alt="Cart Icon" />
+        <img src="../../assets/cart.svg" alt="Cart Icon" />
       </div>
       <p>Cart Is Empty</p>
     </div>

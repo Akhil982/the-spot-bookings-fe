@@ -58,7 +58,7 @@
     background: white;
 
     h3 {
-        font-weight: 300;
+        font-weight: 400;
     }
 }
 
@@ -152,7 +152,7 @@
 }
 
 label{
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
 }
 
 .btn {
@@ -168,24 +168,24 @@ label{
     }
 
     &.btn-primary {
-        background: #e3b04b !important;
-        border: 1px solid #e3b04b !important;
+        background: #1A8917 !important;
+        border: 1px solid #1A8917 !important;
         color: white !important;
 
         &:hover {
-            border: 1px solid #e3b04b;
+            border: 1px solid #1A8917;
             background: transparent;
-            color: #e3b04b;
+            color: #fff;
         }
 
         &.btn-outline-primary {
-            border: 1px solid #e3b04b;
+            border: 1px solid #1A8917;
             background: transparent;
-            color: #e3b04b;
+            color: #fff;
 
             &:hover {
                 border: 1px solid transparent;
-                background: #e3b04b;
+                background: #1A8917;
                 color: white;
             }
         }
