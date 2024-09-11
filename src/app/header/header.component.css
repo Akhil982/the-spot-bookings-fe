@@ -1,3 +1,34 @@
   .navbar-nav .active{
   border-bottom: 2px solid green;
   }
+  .header-bg{
+    background: #fff;
+    box-shadow: -1px 2px 6px rgb(22 22 26 / 5%);
+    padding: 0px 46px;
+  }
+  .nav-link{
+    cursor: pointer;
+    padding: 6px 16px;
+  }
+  .form-inline{
+    position: relative;
+  }
+  .search-icon{
+    position: absolute;
+    right: 5px;
+    width: 47px;
+    cursor: pointer;
+  }
+  a.nav-link.signup {
+    background: #1A8917;
+    color: #fff;
+    border-radius: 20px;
+    padding: 6px 16px;
+}
+a.nav-link.login {
+  background: #f7f3f3;
+  color: #000;
+  border-radius: 20px;
+  padding: 6px 16px;
+  margin-left: 10px;
+}

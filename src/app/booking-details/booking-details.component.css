@@ -37,3 +37,17 @@
       display: contents;
     }
 }
+.booking-details{
+    padding: 20px 46px;
+}
+.ttl-spot{
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.carousel-inner.rounded {
+    height: 500px;
+}
+.card-body li{
+    text-align: center;
+}

@@ -2,6 +2,7 @@
     align-items: center;
     display: flex;
     height: 100%;
+    background: #f6f5f7;
 }
 
 .ftco-no-pt {
@@ -31,7 +32,8 @@
     border-radius: 5px;
     -webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
-    box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
 }
 
 .img,
@@ -140,7 +142,7 @@
 
         &:hover,
         &:focus {
-            background: #e3b04b;
+            background: #f6f5f7;
 
             span {
                 color: white;
@@ -148,7 +150,9 @@
         }
     }
 }
-
+label {
+    margin-bottom: 0px;
+}
 
 
 .btn {

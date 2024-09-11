@@ -1,4 +1,4 @@
-<section class="px-5">
+<section class="booking-details">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">SPOT</a></li>
@@ -6,7 +6,7 @@
             <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
         </ol>
     </nav>
-    <h5>{{branch?.name}}</h5>
+    <h2 class="ttl-spot">{{branch?.name}}</h2>
     <div class="row">
         <div class="col-8 d-flex align-items-center">
             <span>{{branch?.area}}
@@ -59,7 +59,7 @@
                 </a>
             </div>
             <div class="card mt-3">
-                <div class="card-body text-center">
+                <div class="card-body">
                     <p class="font-weight-bold">Sports Available (Click on sports to view price chart)</p>
                     <div class="cards-all">
                       <ul>
@@ -164,11 +164,10 @@
             </div>
         </div>
     </div>
-    <div class="w-full p-5 border border_radius border-border_color">
+    <div class="w-full mt-1 p-3 border border_radius border-border_color">
       <div class="font-semibold text-md">About Venue</div>
-      <h3 class="flex items-center justify-start mt-5 text-sm md:text-md line-clamp-7">
-        {{branch?.branchDetails?.about}}
-        <br><br>
+      <h3 class="flex items-center justify-start mt-2 text-sm md:text-md line-clamp-7">
+        {{branch?.branchDetails?.about}}    
       </h3>
     </div>
  </section>
