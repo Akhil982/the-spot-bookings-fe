@@ -210,3 +210,18 @@ p {
   color: #333;
 }
 
+
+@media(max-width:767px){
+  .booking-container{
+    display: block;
+    padding: 10px 16px;
+    background-color: #f5f5f5;
+  }
+  .booking-details, .cart-details{
+    width: 100%;
+
+  }
+  .cart-details, .cart-container{
+    margin: 20px 0px;
+  }
+}

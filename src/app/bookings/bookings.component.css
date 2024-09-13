@@ -70,3 +70,11 @@ width: 26px;
 .delete-btn:hover {
   background-color: #ff1a1a;
 }
+
+@media(max-width:767px){
+.all-bookings{
+  padding: 10px 16px;
+}
+
+
+}

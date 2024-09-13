@@ -17,3 +17,19 @@ ul li{
 .bg-light{
     border-top: 1px solid #E5E5E5;
 }
+.ftrcls {
+    padding: 10px 46px 0px;
+}
+@media(max-width:767px){
+    .mbl-left ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+    .mbl-left ul li {
+        margin-right: 28px;
+    }
+    .ftrcls{
+        padding: 10px 22px 0px;
+    }
+}

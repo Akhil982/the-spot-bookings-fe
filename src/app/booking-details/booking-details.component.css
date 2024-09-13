@@ -58,3 +58,20 @@ button.btn.btn-success.w-100 {
 .card-body li{
     text-align: center;
 }
+
+@media(max-width:767px){
+    .booking-details{
+        padding: 10px 16px;
+    }
+    button.btn.btn-success{
+        margin: 10px 0px;
+
+    }
+    .carousel-inner.rounded{
+        height: 300px;
+        background-color: azure;
+    }
+    .mbl-100{
+        width: 100% !important;
+    }
+}
