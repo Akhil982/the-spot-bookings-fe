@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class BookingsService {
 
-  //baseUrl = 'https://the-spot-bookings-be.onrender.com';
-  baseUrl = 'http://localhost:8080';
+  baseUrl = 'https://the-spot-bookings-be.onrender.com';
+  //baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
