@@ -5,6 +5,7 @@ import { BookingDetailsComponent } from './booking-details/booking-details.compo
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { BookingCartComponent } from './booking-cart/booking-cart.component';
+import { BookingsComponent } from './bookings/bookings.component';
 
 const routes: Routes = [
   {path: '',component:BookComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'signup',component:SignupComponent},
   { path: 'booking', component: BookComponent },
   { path: 'spot-details/:id', component: BookingDetailsComponent },
-  { path: 'cart', component: BookingCartComponent },
+  { path: 'cart/:id', component: BookingCartComponent },
+  { path: 'bookings', component: BookingsComponent },
 ];
 
 @NgModule({

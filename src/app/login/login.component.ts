@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../service/authentication/auth.service';
 import { LoaderService } from '../service/loader/loader.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BranchService } from '../service/branch/branch.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class LoginComponent {
 
   signInForm!: FormGroup;
 
-  constructor(private loaderService: LoaderService, private authService: AuthService, private router: Router, private branchService: BranchService){
+  constructor(private loaderService: LoaderService, private authService: AuthService, private router: Router, private branchService: BranchService, private route: ActivatedRoute){
 
   }
 
@@ -41,7 +41,16 @@ export class LoginComponent {
         this.loaderService.hide();
         this.authService.isUserLoggedIn.next(true);
         if(this.authService.isUserLoggedIn){
-          this.router.navigate(['/spot-details', this.branchService.expandedBranchId.value]);
+          this.route.paramMap.subscribe(params => {
+            const id = params.get('id');
+            if (id) {
+              this.router.navigate(['/cart', this.branchService.expandedBranchId.value]);
+            } else{
+              this.branchService.currentNavItem.next('book-now');
+              this.router.navigate(['/booking']);
+            }
+          });
+
         } else{
           this.router.navigate(['/booking']);
         }

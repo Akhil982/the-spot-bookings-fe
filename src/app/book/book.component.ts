@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BranchService } from '../service/branch/branch.service';
 import { Router } from '@angular/router';
 import { LoaderService } from '../service/loader/loader.service';
+import { AuthService } from '../service/authentication/auth.service';
 
 @Component({
   selector: 'app-book',
@@ -10,13 +11,16 @@ import { LoaderService } from '../service/loader/loader.service';
 })
 export class BookComponent {
 
-  constructor(private branchService: BranchService, private router: Router, private loaderService: LoaderService){
+  constructor(private branchService: BranchService, private router: Router, private loaderService: LoaderService, private authService: AuthService){
 
   }
 
   branches: any[] = [];
 
   ngOnInit(){
+    if(localStorage.getItem('token')){
+      this.authService.isUserLoggedIn.next(true);
+    }
     this.getSpotBranches();
   }
 

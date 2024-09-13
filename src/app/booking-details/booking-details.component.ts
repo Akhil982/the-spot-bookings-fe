@@ -26,6 +26,9 @@ export class BookingDetailsComponent {
 
   ngOnInit(){
     //this.expandedBranchIdSubscription();
+    if(localStorage.getItem('token')){
+      this.authService.isUserLoggedIn.next(true);
+    }
     this.paramsSubscription();
     this.loggedInSubscription();
   }
@@ -65,8 +68,7 @@ export class BookingDetailsComponent {
       this.router.navigate(['/login', this.branchService.expandedBranchId.value]);
     }
     else{
-      this.cartService.setBranchData(this.branch)
-      this.router.navigate(['/cart']);
+      this.router.navigate(['/cart', this.branchService.expandedBranchId.value]);
     }
   }
 

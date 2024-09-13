@@ -13,9 +13,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
 import { BookingCartComponent } from './booking-cart/booking-cart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { BookingsComponent } from './bookings/bookings.component';
+import { TokenInterceptor } from './service/interceptor/token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,8 @@ import { BookingCartComponent } from './booking-cart/booking-cart.component';
     LoginComponent,
     SignupComponent,
     LoaderComponent,
-    BookingCartComponent
+    BookingCartComponent,
+    BookingsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +39,17 @@ import { BookingCartComponent } from './booking-cart/booking-cart.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     HttpClientModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

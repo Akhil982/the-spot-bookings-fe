@@ -63,7 +63,7 @@
                     <p class="font-weight-bold">Sports Available (Click on sports to view price chart)</p>
                     <div class="cards-all">
                       <ul>
-                        <li class="card sports-card mt-3" *ngFor="let sport of branch.branchDetails.sports">
+                        <li class="card sports-card mt-3" *ngFor="let sport of branch?.branchDetails?.sports">
                           <div class="card-body">
                             <span *ngIf="sport === 'Football'">
                               <svg _ngcontent-ng-c1811048519="" fill="#000000" height="200px" width="200px"
@@ -152,13 +152,13 @@
             <div class="card">
                 <div class="card-body">
                     <p class="font-weight-bold">Timings</p>
-                    <p>{{branch.branchDetails.timing}}</p>
+                    <p>{{branch?.branchDetails?.timing}}</p>
                 </div>
             </div>
             <div class="card mt-3">
                 <div class="card-body">
                     <p class="font-weight-bold">Location</p>
-                    <p>{{branch.branchDetails.location}}</p>
+                    <p>{{branch?.branchDetails?.location}}</p>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12028.835909993624!2d78.3559191!3d17.5152585!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d0042b79a83%3A0x84565519df6b4ae1!2sTHE%20SPOT!5e1!3m2!1sen!2sin!4v1724829878386!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -167,7 +167,7 @@
     <div class="w-full mt-1 p-3 border border_radius border-border_color">
       <div class="font-semibold text-md">About Venue</div>
       <h3 class="flex items-center justify-start mt-2 text-sm md:text-md line-clamp-7">
-        {{branch?.branchDetails?.about}}    
+        {{branch?.branchDetails?.about}}
       </h3>
     </div>
  </section>

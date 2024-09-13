@@ -1,58 +1,54 @@
 <div class="booking-container">
   <div class="booking-details">
-    <h2>{{branch.name}}</h2>
-    <p>{{branch.area}}</p>
+    <h2>{{branch?.name}}</h2>
+    <p>{{branch?.area}}</p>
     <div class="offer-banner">
       <p>You’ve earned a discount coupon for booking through our site!</p>
     </div>
 
-    <form>
+    <form [formGroup]="branchForm">
       <div class="form-group">
-        <label for="sports">Sports</label>        
+        <label for="sports">Sports</label>
         <div class="select-wrapper">
-          <select class="form-control" id="sports">
-            <option>Badminton <img src="../../assets/badmintan.png" alt="cricket Icon" /></option>
-          <option>Box Cricket <img src="../../assets/cricket.png" alt="cricket Icon" /></option>
-            <option *ngFor="let sport of branch.branchDetails.sports">{{sport}}</option>
-            <!-- Add more options as needed -->
+          <select formControlName="sports" class="form-control" id="sports">
+            <option *ngFor="let sport of branch?.branchDetails?.sports" [value]="sport">{{sport}}</option>
           </select>
           <img src="../../assets/select-icon.svg" alt="select Icon" />
-          <!-- <img src="../../assets/cricket.png" alt="cricket Icon" /> -->
         </div>
       </div>
 
       <div class="form-group">
         <label for="date">Date</label>
-        <input type="date" id="date" class="form-control" />
+        <input type="date" formControlName="date" id="date" class="form-control" />
       </div>
 
       <div class="form-group">
         <label for="start-time">Start Time</label>
-        <input type="time" id="start-time" class="form-control" />
+        <input type="time" formControlName="startTime" id="start-time" class="form-control" />
       </div>
 
       <div class="form-group duration-group">
         <label>Duration</label>
         <div class="duration-control">
-          <button type="button" class="duration-btn">-</button>
-          <span class="hours-input">1 Hr</span>
-          <button type="button" class="duration-btn">+</button>
+          <button type="button" class="duration-btn" (click)="adjustDuration(false)">-</button>
+          <span class="hours-input">{{ branchForm.get('duration')?.value }}</span>
+          <button type="button" class="duration-btn" (click)="adjustDuration(true)">+</button>
         </div>
       </div>
 
       <div class="form-group">
         <label for="court">Court</label>
         <div class="select-wrapper">
-          <select id="court" class="form-control">
-            <option>--Select Court--</option>
+          <select formControlName="court" id="court" class="form-control">
+            <option value="">--Select Court--</option>
             <option>Court 1</option>
           </select>
           <img src="../../assets/select-icon.svg" alt="select Icon" />
-          <!-- <img src="../../assets/cricket.png" alt="cricket Icon" /> -->
         </div>
       </div>
-
-      <button type="button" class="add-to-cart-btn" disabled>Add To Cart</button>
+      <div>
+        <button type="button" class="add-to-cart-btn" (click)="addToCart()">Add To Cart</button>
+      </div>
     </form>
   </div>
 
@@ -80,7 +76,7 @@
         </div>
       </div>
     </div>
-    <button class="proceed-btn">
+    <button class="proceed-btn" (click)="confirmBooking()">
       Proceed INR {{ getTotalPrice() }}
     </button>
   </div>

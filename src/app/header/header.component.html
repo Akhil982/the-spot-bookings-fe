@@ -18,20 +18,12 @@
       <!-- <li class="nav-item active">
         <a class="nav-link" href="#">Play</a>
       </li> -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Book Now</a>
+      <li class="nav-item" [ngClass]="{ 'active': currentNavItem === 'book-now'}" (click)="bookNow()">
+        <a class="nav-link" href="/booking">Book Now</a>
       </li>
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li> -->
+      <li class="nav-item" [ngClass]="{ 'active': currentNavItem === 'bookings'}" *ngIf="authService.isUserLoggedIn.value" (click)="openBookings()">
+        <a class="nav-link " href="/bookings">Bookings</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link " href="#">Learn</a>
       </li>
@@ -44,7 +36,7 @@
       <li class="nav-item" *ngIf="isUserLoggedIn">
         <a class="nav-link username">{{getFullName()}}</a>
       </li>
-      <li class="nav-item" *ngIf="isUserLoggedIn" matTooltip="logout">
+      <li class="nav-item" *ngIf="isUserLoggedIn" matTooltip="logout" (click)="logout()">
         <a class="nav-link logout"><img src="../../assets/logout-icon.svg" alt="logout"></a>
       </li>
     </ul>
