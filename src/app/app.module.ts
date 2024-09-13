@@ -12,7 +12,7 @@ import { BookingDetailsComponent } from './booking-details/booking-details.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
 import { BookingCartComponent } from './booking-cart/booking-cart.component';
@@ -40,6 +40,7 @@ import { TokenInterceptor } from './service/interceptor/token-interceptor.servic
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     ToastrModule.forRoot(),
     HttpClientModule
   ],

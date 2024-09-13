@@ -18,7 +18,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
 
   *::-webkit-scrollbar-track {
@@ -26,7 +26,41 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #54a06f;
+    background-color: #1A8917;
     border-radius: 6px;
     border: 3px solid #ffffff;
+  }
+
+  .popup-sec{
+    text-align: center;
+    padding: 16px 10px 6px;
+  }
+  .popup-sec h2{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 0px !important;
+  }
+  .gren-txt{
+    color: #1A8917;
+  }
+  .popup-sec p{
+    text-align: center;
+    font-size: 16px !important;
+  }
+.yes-btn {
+    background: #1A8917;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0px 4px;
+    border: 1px solid #1A8917;
+    width: 100px;
+    margin-left: 12px;
+  }
+.cancel-btn{
+    background-color: #f8f8f8;
+    color: #333;
+    border-radius: 20px;
+    padding: 0px 4px;
+    width: 100px;
   }

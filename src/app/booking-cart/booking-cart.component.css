@@ -96,7 +96,7 @@ label {
   font-size: 22px;
 }
 .hours-input{
-  width: 80px;
+  width: 50px;
   text-align: center;
 }
 .add-to-cart-btn {
@@ -131,8 +131,13 @@ label {
   border: 1px solid #e6e6e6;
   border-radius: 5px;
   padding: 20px;
+  background: #fff;
+  width: 350px;
+  height: fit-content;
 }
-
+.delete-btn img {
+  width: 27px;
+}
 .cart-item {
   display: flex;
   flex-direction: column;
@@ -164,9 +169,14 @@ label {
 .cart-detail {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 }
-
+.cart-container h4 {
+  margin: 0;
+  font-size: 23px;
+  color: #333;
+  font-weight: 600;
+}
 .cart-detail mat-icon {
   margin-right: 10px;
 }

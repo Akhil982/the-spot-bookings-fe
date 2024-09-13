@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { AuthService } from '../service/authentication/auth.service';
 import { Booking } from '../models/booking';
 import { LoaderService } from '../service/loader/loader.service';
 import { BookingsService } from '../service/bookings/bookings.service';
-
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-bookings',
   templateUrl: './bookings.component.html',
@@ -13,7 +13,7 @@ export class BookingsComponent {
 
   bookings: Booking[] = [];
 
-  constructor(private authService: AuthService, private loaderService: LoaderService, private bookingsService: BookingsService) { }
+  constructor(private authService: AuthService, private loaderService: LoaderService, private bookingsService: BookingsService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     if(localStorage.getItem('token')){
@@ -32,5 +32,7 @@ export class BookingsComponent {
       this.loaderService.hide();
     });
   }
-
+  openPopup(templateRef: TemplateRef<any>){ 
+    this.dialog.open(templateRef, { width: '670px' });
+  } 
 }

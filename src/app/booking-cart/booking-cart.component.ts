@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { Cart } from '../models/cart';
 import { CartService } from '../service/cart/cart.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -9,7 +9,7 @@ import { Booking } from '../models/booking';
 import { AuthService } from '../service/authentication/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BranchService } from '../service/branch/branch.service';
-
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-booking-cart',
   templateUrl: './booking-cart.component.html',
@@ -30,7 +30,8 @@ export class BookingCartComponent {
     private authService: AuthService,
     private route: ActivatedRoute,
     private branchService: BranchService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog,
   ){ }
 
   ngOnInit(): void {
@@ -148,5 +149,8 @@ export class BookingCartComponent {
     });
   }
 
+  openPopup(templateRef: TemplateRef<any>){ 
+    this.dialog.open(templateRef, { width: '670px' });
+  } 
 
 }
