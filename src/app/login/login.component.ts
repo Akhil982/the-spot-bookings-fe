@@ -38,6 +38,7 @@ export class LoginComponent {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('firstName', response.data.firstName);
         localStorage.setItem('lastName', response.data.lastName);
+        localStorage.setItem('role', response.data.role);
         this.loaderService.hide();
         this.authService.isUserLoggedIn.next(true);
         if(this.authService.isUserLoggedIn){

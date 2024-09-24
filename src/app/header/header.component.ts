@@ -47,6 +47,13 @@ export class HeaderComponent {
     return '';
   }
 
+  getRole(){
+    if(localStorage.getItem('role')){
+      return localStorage.getItem('role');
+    }
+    return '';
+  }
+
   logout(){
     this.router.navigate(['']);
     localStorage.clear();

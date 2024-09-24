@@ -27,7 +27,7 @@ export class SignupComponent {
 
   onSubmit(): void {
     let signUpData = this.signUpForm.value;
-    signUpData['role'] = 'SUPER_ADMIN';
+    signUpData['role'] = 'USER';
     this.signUpSpotUser(signUpData);
   }
 

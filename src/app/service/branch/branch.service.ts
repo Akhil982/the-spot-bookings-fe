@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from '../../../environments/environmemt';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ export class BranchService {
 
   public expandedBranchId: BehaviorSubject<string> = new BehaviorSubject<string>('');
   public currentNavItem: BehaviorSubject<string> = new BehaviorSubject<string>('book-now');
-  baseUrl = 'https://the-spot-bookings-be.onrender.com';
-  //baseUrl = 'http://localhost:8080';
+
+  baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 

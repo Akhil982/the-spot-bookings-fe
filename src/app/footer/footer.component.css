@@ -9,7 +9,7 @@ ul li{
 .social-icons{
     display: flex;
     justify-content: space-between;
-    gap: 10px;    
+    gap: 10px;
 }
 .social-icons li{
     cursor: pointer;
@@ -19,6 +19,16 @@ ul li{
 }
 .ftrcls {
     padding: 10px 46px 0px;
+}
+.footer-logo {
+  margin-right: 15px;
+}
+
+.card-text {
+  margin-left: 15px;
+  line-height: 1.4;
+  font-size: 16px;
+  width: 300px;
 }
 @media(max-width:767px){
     .mbl-left ul {

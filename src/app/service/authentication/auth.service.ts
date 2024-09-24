@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from '../../../environments/environmemt';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,7 @@ export class AuthService {
 
   public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  baseUrl = 'https://the-spot-bookings-be.onrender.com';
-  //baseUrl = 'http://localhost:8080';
+  baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 

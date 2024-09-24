@@ -139,6 +139,8 @@ export class BookingCartComponent {
     if(userId)
       booking.userId = userId;
     booking.branchId = this.branch.id;
+    booking.branchName = this.branch.name;
+    booking.branchArea = this.branch.area;
     this.loaderService.show();
     this.bookingsService.addBookings(booking).subscribe(response => {
       if(response.status === 200){
@@ -149,8 +151,8 @@ export class BookingCartComponent {
     });
   }
 
-  openPopup(templateRef: TemplateRef<any>){ 
+  openPopup(templateRef: TemplateRef<any>){
     this.dialog.open(templateRef, { width: '670px' });
-  } 
+  }
 
 }

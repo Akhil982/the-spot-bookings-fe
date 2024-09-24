@@ -18,11 +18,14 @@
       <!-- <li class="nav-item active">
         <a class="nav-link" href="#">Play</a>
       </li> -->
-      <li class="nav-item" [ngClass]="{ 'active': currentNavItem === 'book-now'}" (click)="bookNow()">
+      <li class="nav-item" [ngClass]="{ 'active': currentNavItem === 'book-now'}" *ngIf="getRole() != 'SUPER_ADMIN'" (click)="bookNow()">
         <a class="nav-link" href="/booking">Book Now</a>
       </li>
-      <li class="nav-item" [ngClass]="{ 'active': currentNavItem === 'bookings'}" *ngIf="authService.isUserLoggedIn.value" (click)="openBookings()">
+      <li class="nav-item" [ngClass]="{ 'active': currentNavItem === 'bookings'}" *ngIf="authService.isUserLoggedIn.value && getRole() != 'SUPER_ADMIN'" (click)="openBookings()">
         <a class="nav-link " href="/bookings">Bookings</a>
+      </li>
+      <li class="nav-item" [ngClass]="{ 'active': currentNavItem === 'book-now'}" *ngIf="getRole() === 'SUPER_ADMIN'" (click)="openBookings()">
+        <a class="nav-link " href="/booking">Admin Bookings</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="#">Learn</a>

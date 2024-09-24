@@ -1,0 +1,19 @@
+.blurred {
+  filter: blur(2px);
+  pointer-events: none; /* Disables interactions with blurred content */
+  opacity: 0.3;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8); /* Adjust for desired effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures loader is above other components */
+}

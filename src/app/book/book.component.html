@@ -1,4 +1,4 @@
-<section>
+<section *ngIf="userPage">
     <div class="search-block">
         <h4>Experience the Next Level of Sports Innovation with THE SPOT!</h4>
         <!-- <form class="form-inline m-2 my-lg-0">
@@ -92,4 +92,19 @@
             </mat-tab> -->
         </mat-tab-group>
     </div>
+</section>
+<section *ngIf="!userPage">
+  <div class="all-bookings">
+    <h2>Admin Bookings</h2>
+    <div class="booking-details-grid">
+      <div *ngFor="let adminBranch of adminBranches" class="booking-card">
+        <div class="booking-details">
+          <h3>{{adminBranch.name}} {{adminBranch.area}}</h3>
+          <p><strong>Rating:</strong> {{ adminBranch.rating }}</p>
+          <p><strong>No of Bookings:</strong> {{ adminBranch.noOfBookings }}</p>
+          <p><strong>Total Revenue:</strong> INR {{ adminBranch.branchRevenue }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

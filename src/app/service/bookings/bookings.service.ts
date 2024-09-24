@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environmemt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookingsService {
 
-  baseUrl = 'https://the-spot-bookings-be.onrender.com';
-  //baseUrl = 'http://localhost:8080';
+  baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +18,10 @@ export class BookingsService {
 
   getBookingsByUserId(userId: string): Observable<any> {
     return this.http.get<any>(this.baseUrl + '/the-spot/bookings/get-bookings-by-user-id/' + userId);
+  }
+
+  deleteBooking(id: string): Observable<any> {
+    return this.http.delete<any>(this.baseUrl + '/the-spot/bookings/delete-booking/' + id);
   }
 
 }

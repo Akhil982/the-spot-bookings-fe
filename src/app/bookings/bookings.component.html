@@ -1,35 +1,37 @@
 
 <div class="all-bookings">
   <h2>All Bookings</h2>
-  <div class="booking-details-grid">
+  <div *ngIf="bookings.length === 0" class="booking-details-grid">
+    <p>There are no bookings.</p>
+  </div>
+  <div *ngIf="bookings.length > 0" class="booking-details-grid">
     <div *ngFor="let booking of bookings" class="booking-card">
       <div class="booking-details">
-        <h3>{{ booking.courtName }}</h3>
+        <h3>{{booking.branchName}} {{booking.branchArea}} :- {{ booking.courtName }}</h3>
         <p><strong>Sport:</strong> {{ booking.sport }}</p>
         <p><strong>Date:</strong> {{ booking.date | date:'dd, MMMM yyyy' }}</p>
         <p><strong>Time:</strong> {{ booking.startTime }} to {{ booking.endTime }}</p>
         <p><strong>Price:</strong> INR {{ booking.price }}</p>
       </div>
       <div class="booking-actions">
-        <img src="../../assets/delete.svg" alt="delete" (click)="openPopup(bookinsdata)">
+        <img src="../../assets/delete.svg" alt="delete" (click)="openPopup(bookinsdata, booking)">
         <!-- <button class="delete-btn">Delete</button> -->
       </div>
     </div>
-</div>
+  </div>
 </div>
 <!--popup-->
-<ng-template #bookinsdata> 
+<ng-template #bookinsdata let-data>
   <div class="popup-sec">
-  <h2>Booking.courtName</h2>
-  <mat-dialog-content>
-    <p>
-      Are you sure you want to delete this 
-      <span class="gren-txt">Booking.courtName </span>
-    </p>
-  </mat-dialog-content>
-</div>
+    <mat-dialog-content>
+      <p>
+        Are you sure you want to cancel booking for
+        <span class="gren-txt">{{data.branchName}} {{data.branchArea}} {{data.courtName}}</span>
+      </p>
+    </mat-dialog-content>
+  </div>
   <mat-dialog-actions>
     <button  mat-dialog-close class="cancel-btn">No</button>
-    <button mat-dialog-close class="yes-btn">Yes</button>
+    <button mat-dialog-close class="yes-btn" (click)="cancelBooking(data.id)">Yes</button>
   </mat-dialog-actions>
-</ng-template> 
+</ng-template>
