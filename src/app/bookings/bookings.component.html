@@ -13,6 +13,15 @@
         <p><strong>Time:</strong> {{ booking.startTime }} to {{ booking.endTime }}</p>
         <p><strong>Price:</strong> INR {{ booking.price }}</p>
       </div>
+      <div class="bg-card-pdf d-none">
+        <div class="booking-pdf-details">
+          <h3>Branch name: {{booking.branchName}}</h3>
+          <p><strong>Sport:</strong> {{ booking.sport }}</p>
+          <p><strong>Date:</strong> {{ booking.date | date:'dd, MMMM yyyy' }}</p>
+          <p><strong>Time:</strong> {{ booking.startTime }} to {{ booking.endTime }}</p>
+          <p><strong>Price:</strong> INR {{ booking.price }}</p>
+        </div>
+      </div>
       <div class="booking-actions">
         <img src="../../assets/delete.svg" alt="delete" (click)="openPopup(bookinsdata, booking)">
         <img src="../../assets/pdf.png" alt="pdf" (click)="generatePDF(bookingDetails)">
@@ -20,19 +29,6 @@
       </div>
     </div>
   </div>
-</div>
-
-<!-- pdf download bookings-->
-
-<div class="bg-card-pdf d-none">
-  <div class="booking-pdf-details">
-    <h3>Branch name</h3>
-    <p><strong>Sport:</strong>  booking.sport </p>
-    <p><strong>Date:</strong> booking.date | date:'dd, MMMM yyyy'</p>
-    <p><strong>Time:</strong> booking.startTime to booking.endTime</p>
-    <p><strong>Price:</strong> INR  booking.price</p>
-  </div>
-
 </div>
 
 <!--popup-->

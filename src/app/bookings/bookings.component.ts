@@ -65,15 +65,17 @@ export class BookingsComponent {
   }
 
   generatePDF(bookingDetails: HTMLElement) {
-    html2canvas(bookingDetails).then(canvas => {
-      const pdf = new jsPDF('p', 'pt', 'a4');
+    html2canvas(bookingDetails, { useCORS: true }).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
-      const imgProps = pdf.getImageProperties(imgData);
+      const pdf = new jsPDF('p', 'pt', 'a4');
+
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
       pdf.save('THE SPOT-invoice.pdf');
+    }).catch(err => {
+      console.error("Error generating PDF: ", err);
     });
   }
 

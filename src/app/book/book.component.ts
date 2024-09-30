@@ -61,7 +61,7 @@ export class BookComponent {
   }
 
   viewBookingDashboard(adminBranch: any){
-    this.router.navigate(['/booking-dashboard']);
+    this.router.navigate(['/booking-dashboard', adminBranch.id]);
   }
 
 }

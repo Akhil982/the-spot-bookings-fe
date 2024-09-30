@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environmemt';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -15,4 +15,9 @@ export class AdminService {
   getAdminBranches(): Observable<any> {
     return this.http.get<any>(this.baseUrl + '/the-spot/admin/get-branches');
   }
+
+  getRevenueData(branchId: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/the-spot/admin/get-branch-dashboard/` + branchId);
+}
+
 }
