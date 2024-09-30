@@ -53,10 +53,14 @@ h2 {
 
 .booking-actions {
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .booking-actions img{
 cursor: pointer;
 width: 26px;
+margin-bottom: 16px;
 }
 
 .delete-btn {
@@ -78,3 +82,21 @@ width: 26px;
 }
 
 }
+
+.bg-card-pdf{
+  background-color: #fff;
+  border:1px solid #000;
+  padding: 20px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.booking-pdf-details h3{
+  margin: 0;
+  color: #1a8917;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+} 

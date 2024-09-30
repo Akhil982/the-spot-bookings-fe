@@ -21,6 +21,20 @@
     </div>
   </div>
 </div>
+
+<!-- pdf download bookings-->
+
+<div class="bg-card-pdf d-none">
+  <div class="booking-pdf-details">
+    <h3>Branch name</h3>
+    <p><strong>Sport:</strong>  booking.sport </p>
+    <p><strong>Date:</strong> booking.date | date:'dd, MMMM yyyy'</p>
+    <p><strong>Time:</strong> booking.startTime to booking.endTime</p>
+    <p><strong>Price:</strong> INR  booking.price</p>
+  </div>
+
+</div>
+
 <!--popup-->
 <ng-template #bookinsdata let-data>
   <div class="popup-sec">

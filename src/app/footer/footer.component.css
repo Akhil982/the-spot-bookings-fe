@@ -34,12 +34,17 @@ ul li{
     .mbl-left ul {
         display: flex;
         flex-wrap: wrap;
-        margin: 0px;
+        margin: 0px 20px 0px;
     }
     .mbl-left ul li {
         margin-right: 28px;
     }
     .ftrcls{
         padding: 10px 22px 0px;
+    }
+    .d-flex.mbl-block {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 }

@@ -46,3 +46,9 @@ a.nav-link.logout {
 a.nav-link.username {
   font-weight: bold;
 }
+
+@media(max-width:767px){
+  a.nav-link.signup, a.nav-link.login{
+    margin-bottom: 10px;
+  }
+}
