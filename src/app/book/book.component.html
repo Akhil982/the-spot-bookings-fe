@@ -98,7 +98,7 @@
     <h2>Admin Bookings</h2>
     <div class="booking-details-grid">
       <div *ngFor="let adminBranch of adminBranches" class="booking-card">
-        <div class="booking-details">
+        <div class="booking-details" (click)="viewBookingDashboard(adminBranch)">
           <h3>{{adminBranch.name}} {{adminBranch.area}}</h3>
           <p><strong>Rating:</strong> {{ adminBranch.rating }}</p>
           <p><strong>No of Bookings:</strong> {{ adminBranch.noOfBookings }}</p>

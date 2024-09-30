@@ -60,4 +60,8 @@ export class BookComponent {
     this.router.navigate(['/spot-details', id]);
   }
 
+  viewBookingDashboard(adminBranch: any){
+    this.router.navigate(['/booking-dashboard']);
+  }
+
 }

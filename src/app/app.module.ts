@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { BookingsComponent } from './bookings/bookings.component';
 import { TokenInterceptor } from './service/interceptor/token-interceptor.service';
+import { BookingDashboardComponent } from './booking-dashboard/booking-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { TokenInterceptor } from './service/interceptor/token-interceptor.servic
     SignupComponent,
     LoaderComponent,
     BookingCartComponent,
-    BookingsComponent
+    BookingsComponent,
+    BookingDashboardComponent
   ],
   imports: [
     BrowserModule,

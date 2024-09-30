@@ -6,7 +6,7 @@
   </div>
   <div *ngIf="bookings.length > 0" class="booking-details-grid">
     <div *ngFor="let booking of bookings" class="booking-card">
-      <div class="booking-details">
+      <div class="booking-details" #bookingDetails (click)="viewBookingDetails(booking)">
         <h3>{{booking.branchName}} {{booking.branchArea}} :- {{ booking.courtName }}</h3>
         <p><strong>Sport:</strong> {{ booking.sport }}</p>
         <p><strong>Date:</strong> {{ booking.date | date:'dd, MMMM yyyy' }}</p>
@@ -15,6 +15,7 @@
       </div>
       <div class="booking-actions">
         <img src="../../assets/delete.svg" alt="delete" (click)="openPopup(bookinsdata, booking)">
+        <img src="../../assets/pdf.png" alt="pdf" (click)="generatePDF(bookingDetails)">
         <!-- <button class="delete-btn">Delete</button> -->
       </div>
     </div>

@@ -5,6 +5,11 @@ import { LoaderService } from '../service/loader/loader.service';
 import { BookingsService } from '../service/bookings/bookings.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
+import { Chart, BarController, BarElement, CategoryScale, LinearScale, Title } from 'chart.js';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-bookings',
   templateUrl: './bookings.component.html',
@@ -14,7 +19,15 @@ export class BookingsComponent {
 
   bookings: Booking[] = [];
 
-  constructor(private authService: AuthService, private loaderService: LoaderService, private bookingsService: BookingsService, private dialog: MatDialog, private toastrService: ToastrService) { }
+  constructor(
+    private authService: AuthService,
+    private loaderService: LoaderService,
+    private bookingsService: BookingsService,
+    private dialog: MatDialog,
+    private toastrService: ToastrService,
+    private router: Router
+  )
+  { }
 
   ngOnInit(): void {
     if(localStorage.getItem('token')){
@@ -50,4 +63,23 @@ export class BookingsComponent {
       }
     });
   }
+
+  generatePDF(bookingDetails: HTMLElement) {
+    html2canvas(bookingDetails).then(canvas => {
+      const pdf = new jsPDF('p', 'pt', 'a4');
+      const imgData = canvas.toDataURL('image/png');
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('THE SPOT-invoice.pdf');
+    });
+  }
+
+  viewBookingDetails(booking: any): void {
+    console.log(booking);
+  }
+
+
 }
