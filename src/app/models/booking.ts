@@ -6,6 +6,8 @@ export class Booking{
   endTime!: string;
   price!: number;
   userId!: string;
+  userName!: string;
+  userEmail!: string;
   branchId!: string;
   branchName!: string;
   branchArea!: string;

@@ -136,8 +136,15 @@ export class BookingCartComponent {
     booking.date = this.cartItems[0].date;
     booking.price = this.cartItems[0].price;
     const userId = localStorage.getItem('userId');
+    const firstName = localStorage.getItem('firstName');
+    const lastName = localStorage.getItem('lastName');
+    const userEmail = localStorage.getItem('email');
     if(userId)
       booking.userId = userId;
+    if(firstName && lastName)
+      booking.userName = firstName + ' ' + lastName;
+    if(userEmail)
+      booking.userEmail = userEmail;
     booking.branchId = this.branch.id;
     booking.branchName = this.branch.name;
     booking.branchArea = this.branch.area;
